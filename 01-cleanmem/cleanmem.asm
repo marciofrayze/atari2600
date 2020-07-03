@@ -1,8 +1,6 @@
 ; Cabeçalho padrão de todos os programas.
 ; Lembre-se: identação é importante!
-
     processor 6502
-
     seg code
     org $F000         ; define a origem em $F000
 
@@ -17,7 +15,6 @@ Start:
 ; que contem todo o espaço de registros da TIA e
 ; tambem memoria RAM.
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-
     lda #0            ; A = 0
     ldx #$FF          ; X = #$FF
 
@@ -33,4 +30,3 @@ MemLoop:
     org $FFFC
     .word Start       ; reseta vector no $FFFC (onde programa inicia)
     .word Start       ; não utilizado pelo VCS (apenas para completar os 16 bits)
-

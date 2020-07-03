@@ -17,10 +17,11 @@ Start:
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
     lda #0            ; A = 0
     ldx #$FF          ; X = #$FF
+    sta $FF           ; garantindo que $FF esta zerado antes de iniciar loop
 
 MemLoop:
-    sta $0,X          ; armazena 0 no endereço $0 + x
     dex               ; x--
+    sta $0,X          ; armazena 0 no endereço $0 + x
     bne MemLoop       ; loop até que X == 0 (zflag setada)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
